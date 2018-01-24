@@ -1,0 +1,1 @@
+document.getElementById('datepick').value = new Date().toDateInputValue();
