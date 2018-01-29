@@ -12,18 +12,22 @@ html, body {
 	width: 100vw;
 }
 form {
-	font-size: 5vh;
+	font-size: 3vh;
 }
 input {
-	font-size: 4vh;
+	font-size: 3vh;
+	padding: 5px;
 }
 input[type="radio"] {
 	height: 3vh;
 	width: 3vh;
 }
-input .roomno {
-	size: 3px;
+
+input.big {
+	height: 10vh;
+	width: 80vw;
 }
+
 select {
 	height: 4vh;
 	width: auto;
@@ -37,12 +41,24 @@ select {
 	font-size: 5vh;
 	text-align: center;
 }
+
+.back {
+	width: 13vw;
+	height: 5vh;
+	text-align: center;
+	font-size: 3vh;
+	float:left;
+}
+
 .container {
 	display: block;
-	width: 100vw;
+	width: 90vw;
 	background-color: #fff;
-	height: 95vh;
+	height: 90vh;
 	position: absolute;
+	line-height: 7vh;
+	margin: 3vw;
+	padding: 2vw;
 }
 .container p {
 	font-size: 5vh;
@@ -54,23 +70,17 @@ select {
 	height: 50%;
 	width: 80%;
 }
-.top {
+
+.box {
 	width: 100%;
-	height: 50%;
-	background-color: #333;
-}
-.top .outpass {
-	width: 50%;
 	float: left;
-	height: 100%;
-	background-color: #3B5998;
+	height: 10vh;
 	display: block;
 	text-decoration: none;
 	position: relative;
 	transition: all, 0.2s;
 }
-/* net was not working. Just check what it was for onclick transition. Or animation we will put in js afterwards.*/
-.top .outpass:hover {
+.box:active {
  -moz-transform: scale(1.2, 1.2);
  -ms-transform: scale(1.2, 1.2);
  -webkit-transform: scale(1.2, 1.2);
@@ -78,62 +88,21 @@ select {
  transition: all, 0.2s;
  z-index: 100000;
 }
-.top .nightout {
-	text-decoration: none;
-	position: relative;
-	display: block;
-	width: 50%;
-	height: 100%;
-	float: left;
+#outpass {
+	background-color: #3B5998;
+}
+#nightout {
 	background-color: #4099FF;
-	transition: all, 0.2s;
 }
-.top .nightout:onClick {
- transition: all, 0.2s;
- -moz-transform: scale(1.2, 1.2);
- -ms-transform: scale(1.2, 1.2);
- -webkit-transform: scale(1.2, 1.2);
- transform: scale(1.2, 1.2);
- z-index: 10000;
-}
-.bottom {
-	height: 50%;
-	width: 100%;
-	background-color: #999;
-}
-.bottom .leave {
-	text-decoration: none;
-	position: relative;
-	display: block;
-	width: 50%;
-	height: 100%;
+#leave {
 	background-color: #c73b6f;
-	float: left;
-	transition: all, 0.2s;
 }
- .bottom .leave:onClick {
- transition: all, 0.2s;
- z-index: 10000000;
- -moz-transform: scale(1.2, 1.2);
- -ms-transform: scale(1.2, 1.2);
- -webkit-transform: scale(1.2, 1.2);
- transform: scale(1.2, 1.2);
-}
-.bottom .contact {
-	text-decoration: none;
-	position: relative;
-	display: block;
+#contact {
 	background-color: #cb2028;
-	width: 50%;
-	height: 100%;
-	float: left;
-	transition: all, 0.2s;
 }
-.bottom .contact:onClick {
- transition: all, 0.2s;
- -moz-transform: scale(1.2, 1.2);
- -ms-transform: scale(1.2, 1.2);
- -webkit-transform: scale(1.2, 1.2);
- transform: scale(1.2, 1.2);
- z-index: 99999999999;
+#pending {
+	background-color: #D68910;
+}
+#approve {
+	background-color: #7DCEA0;
 }
