@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var submit = require('./routes/submit');
+var access = require('./routes/access');
 
 var app = express();
 
@@ -23,9 +24,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//CORS enabled. it enables cross domain sending and receiving data
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use('/', index);
 app.use('/users', users);
 app.use('/submit',submit);
+app.use('/access',access);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
