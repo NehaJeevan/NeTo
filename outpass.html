@@ -15,28 +15,29 @@
           OUTPASS	
       </div>
       <div class="container">
-<form action="http://localhost:3000/submit/outpass" method="post">
-      Name: <input type="text" name="name" placeholder="Full Name" id="name"><br>
-                  Year: <input name="year" type="radio" value="fe" >FE <input type="radio" name="year" value="se" checked>SE <input type="radio" name="year" value="te">TE <input type="radio" name="year" value="be">BE<br>
-                Branch: <select name="branch">
-                <option value="Comp" selected>Comp</option>
-                <option value="Mech">Mech</option>
-                <option value="Entc">E&amp;tc</option>
-                <option value="IT">IT</option>
-                </select><br>
-                Room No: <select name="hostel">
-                <option value="obh" selected>OBH</option>
-                <option value="nbh1">NBH1</option>
-                <option value="nbh2">NBH2</option>
-                <option value="gh">GH</option>
-                </select>
-                <input type="number" name="roomno" placeholder="Room No" style="width:4em;">
-                <input type="text" name="flank" placeholder="Flank" maxlength="1" size="1"><br>
-                Date: <input type="date" name="date"><br>
-                Time: <input type="time" name="fromtime"> To <input type="time" name="totime"><br>
-                Reason: <br> <input type="text" name="reason" class="reason">
-                <br><input type="submit" value="Submit" >
-              </form>
+        <form action="http://localhost:3000/submit/outpass" method="post">
+          Name: <input type="text" name="name" placeholder="Full Name" id="name"><br>
+          Merit No: <input type="number" name="merit" style="width:6em;"><br>
+          Year: <input name="year" type="radio" value="fe" >FE <input type="radio" name="year" value="se" checked>SE <input type="radio" name="year" value="te">TE <input type="radio" name="year" value="be">BE<br>
+          Branch: <select name="branch">
+          <option value="Comp" selected>Comp</option>
+          <option value="Mech">Mech</option>
+          <option value="Entc">E&amp;tc</option>
+          <option value="IT">IT</option>
+          </select><br>
+          Room No: <select name="hostel">
+          <option value="obh" selected>OBH</option>
+          <option value="nbh1">NBH1</option>
+          <option value="nbh2">NBH2</option>
+          <option value="gh">GH</option>
+          </select>
+          <input type="number" name="roomno" placeholder="Room No" style="width:4em;">
+          <input type="text" name="flank" placeholder="Flank" maxlength="1" size="1"><br>
+          Date: <input type="date" name="date"><br>
+          Time: <input type="time" name="fromtime"> To <input type="time" name="totime"><br>
+          Reason: <br> <input type="text" name="reason" class="big">
+          <br><input type="submit" value="Submit" >
+        </form>
           
   </div>
   </body>

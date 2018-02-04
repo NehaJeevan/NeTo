@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>NeTo</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+  	
+function getPending() {
+	var xhttp = new XMLHttpRequest();
+	var merit = document.getElementById("merit");
+
+	xhttp.onreadystatechange = function() 
+	{
+        if (this.readyState == 4 && this.status == 200) {
+        	if(this.responseText == "") {
+        		document.getElementById("pollute").innerHTML = "No Forms";
+        	}
+        	else {
+            	document.getElementById("pollute").innerHTML = this.responseText;
+            }
+       }
+    };
+    var url = "http://localhost:3000/access/reject/" + merit.value;
+    xhttp.open("GET", url, true);
+    xhttp.send(); 
+}
+
+  </script>
+</head>
+
+<body>
+<a href="index.html"><button class="back">Back</button></a>
+	<div class="header">
+	<!--Thought something needed to be written so for now its just MENU. We can change it to the App name-->
+		REJECTED
+	</div>
+	<div class="container">
+		
+		<p>Merit No: <input type="number" id="merit"><br>
+		<button type="button" onclick="getPending()">Get Forms</button>
+		</p>
+		<br>
+		<p id="pollute"></p>
+
+	</div>
+</body>
+
+</html>
