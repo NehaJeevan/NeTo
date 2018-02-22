@@ -5,28 +5,7 @@
   <meta charset="UTF-8">
   <title>NeTo</title>
   <link rel="stylesheet" href="./css/style.css">
-  <script>
-  	
-function getPending() {
-	var xhttp = new XMLHttpRequest();
-	var merit = document.getElementById("merit");
-
-	xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            if(this.responseText == "") {
-        		document.getElementById("pollute").innerHTML = "No Forms";
-        	}
-        	else {
-            	document.getElementById("pollute").innerHTML = this.responseText;
-            }
-       }
-    };
-    var url = "http://localhost:3000/access/pending/" + merit.value;
-    xhttp.open("GET", url, true);
-    xhttp.send(); 
-}
-
-  </script>
+  <script src="./js/formlist.js" type="text/javascript"> </script>
 </head>
 
 <body>
@@ -39,7 +18,7 @@ function getPending() {
 	<div class="container">
 		
 		<p>Merit No: <input type="number" id="merit"><br>
-		<button type="button" onclick="getPending()">Get Forms</button>
+		<button type="button" onclick="getForm('pending')">Get Forms</button>
 		</p>
 		<br>
 		<p id="pollute"></p>
