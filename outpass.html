@@ -1,18 +1,18 @@
   <!DOCTYPE html>
   <html lang="en" >
-  
+
   <head>
     <meta charset="UTF-8">
     <title>NeTo</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/outpass.js"></script>
+    <script src="./js/date.js"></script>
   </head>
-  
-  <body >
+
+  <body onload="changetoday()">
   <!--put in error checking at date and time-->
   <a href="index.html"><button class="back">Back</button></a>
       <div class="header">
-          OUTPASS	
+          OUTPASS
       </div>
       <div class="container">
         <form action="http://localhost:3000/submit/outpass" method="post" target="_self">
@@ -33,13 +33,13 @@
           </select>
           <input type="number" name="roomno" placeholder="Room No" style="width:4em;">
           <input type="text" name="flank" placeholder="Flank" maxlength="1" size="1"><br>
-          Date: <input type="date" name="date"><br>
-          Time: <input type="time" name="fromtime"> To <input type="time" name="totime"><br>
+          Date: <input type="date" name="date" class="date"><br>
+          Time: <input type="time" name="fromtime" class="time"> To <input type="time" name="totime" class="time"><br>
           Reason: <br> <input type="text" name="reason" class="big">
           <br><input type="submit" value="Submit" >
         </form>
-          
+
   </div>
   </body>
-  
+
   </html>
