@@ -4,6 +4,9 @@ function getForm(value) {
 	var xhttp = new XMLHttpRequest();
 	var merit = document.getElementById("merit");
 	var table = document.getElementById("pollute");
+	var text = document.getElementById("entry");
+	table.innerHTML = "";
+	text.innerHTML = "";
 
 	xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -23,11 +26,11 @@ function getForm(value) {
 				var cell3 = row.insertCell(2);
 				var cell4 = row.insertCell(3);
 				cell1.innerHTML = "Type";
-				cell2.innerHTML = "From Date";
-				cell3.innerHTML = "To Date";
-				cell4.innerHTML = "Submited On";
+				cell2.innerHTML = "From";
+				cell3.innerHTML = "To";
+				cell4.innerHTML = "Submitted";
 
-        		for(var i = 0;i<result.length;i++) {
+        		for(var i = 0;i<result.length && i<8;i++) {
             		var row = table.insertRow(i+1);
 					var type = row.insertCell(0);
 					var fromd = row.insertCell(1);
@@ -36,7 +39,7 @@ function getForm(value) {
 
             		switch(result[i].type) {
             			case 1:
-							type.innerHTML = "Outpass";
+							type.innerHTML = 'OutPass';
 							fromd.innerHTML = result[i].date;
 							break;
             			case 2:
@@ -52,7 +55,7 @@ function getForm(value) {
             		}
 
             		var date = new Date(result[i].submitdate);
-            		subtime.innerHTML = " " + date.getDate() +"/"+ (date.getMonth()+1) +"/"+ date.getFullYear();
+            		subtime.innerHTML = date.getDate() + "-"+ (date.getMonth()+1) + "-" + date.getFullYear();
             	}
             }
        }
@@ -63,3 +66,36 @@ function getForm(value) {
     xhttp.send();
 	//get request sent and waiting for result
 }
+
+function getEntryDetail(row, type) {
+	var xhttp = new XMLHttpRequest();
+	var merit = document.getElementById("merit");
+	var text = document.getElementById("entry");
+	var table = document.getElementById("pollute");
+	table.innerHTML = "";
+
+	xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        	var result = JSON.parse(this.responseText);
+
+			//If there are no forms for given meritno
+
+				text.innerHTML = JSON.stringify(result[0]);
+				console.log(result[0]);
+
+       }
+    };
+
+	var url = "http://localhost:3000/access/"+ type + "/" + merit.value + '?skip=' + row;
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+$(document).ready(function() {
+	$('table').on('click','tr',function() {
+		var row_index = $(this).closest("tr").index();
+		var type = $('table').attr('class');
+		console.log(type);
+    	getEntryDetail(row_index, type);
+	});
+});

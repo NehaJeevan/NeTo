@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>NeTo</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
    <script src="./js/formlist.js"> </script>
 </head>
 
@@ -19,9 +20,9 @@
 		<p>Merit No: <input type="number" id="merit"><br>
 		<button type="button" onclick="getForm('rejected')">Get Forms</button>
 		</p>
-		<br>
-		<p id="pollute"></p>
 
+		<table id="pollute" class="rejected"></table>
+        <p id="entry"></p>
 	</div>
 </body>
 

@@ -6,6 +6,9 @@
     <title>NeTo</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/date.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/forms.js"></script>
+
   </head>
 
   <body onload="changetoday()">
@@ -15,7 +18,7 @@
           OUTPASS
       </div>
       <div class="container">
-        <form action="http://localhost:3000/submit/outpass" method="post" target="_self">
+        <form class="outpass">
           Name: <input type="text" name="name" placeholder="Full Name" id="name"><br>
           Merit No: <input type="number" name="merit" style="width:6em;"><br>
           Year: <input name="year" type="radio" value="fe" >FE <input type="radio" name="year" value="se" checked>SE <input type="radio" name="year" value="te">TE <input type="radio" name="year" value="be">BE<br>
